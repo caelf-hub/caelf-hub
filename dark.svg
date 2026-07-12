@@ -1,116 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="title desc">
-  <title id="title">font  type in motion</title>
-  <desc id="desc">Animated wordmark for the font repository in GitHub dark mode</desc>
-
-  <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0d1117"/>
-      <stop offset="55%" stop-color="#161b22"/>
-      <stop offset="100%" stop-color="#0d1117"/>
-    </linearGradient>
-    <linearGradient id="inkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#58a6ff">
-        <animate attributeName="stop-color" values="#58a6ff;#79c0ff;#58a6ff" dur="6s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="50%" stop-color="#f0f6fc">
-        <animate attributeName="stop-color" values="#f0f6fc;#c9d1d9;#f0f6fc" dur="6s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="100%" stop-color="#3fb950">
-        <animate attributeName="stop-color" values="#3fb950;#56d364;#3fb950" dur="6s" repeatCount="indefinite"/>
-      </stop>
-    </linearGradient>
-    <radialGradient id="glow" cx="50%" cy="42%" r="45%">
-      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.22"/>
-      <stop offset="70%" stop-color="#58a6ff" stop-opacity="0.05"/>
-      <stop offset="100%" stop-color="#0d1117" stop-opacity="0"/>
-    </radialGradient>
-    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="8" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-  </defs>
-
-  <!-- Atmosphere -->
-  <rect width="1200" height="630" fill="url(#bgGrad)"/>
-  <rect width="1200" height="630" fill="url(#glow)">
-    <animate attributeName="opacity" values="0.7;1;0.7" dur="5s" repeatCount="indefinite"/>
-  </rect>
-
-  <!-- Baseline grid -->
-  <g stroke="#30363d" stroke-width="1" opacity="0.55">
-    <line x1="80" y1="210" x2="1120" y2="210"/>
-    <line x1="80" y1="315" x2="1120" y2="315"/>
-    <line x1="80" y1="420" x2="1120" y2="420"/>
-    <line x1="80" y1="210" x2="80" y2="420" stroke-dasharray="4 8"/>
-    <line x1="1120" y1="210" x2="1120" y2="420" stroke-dasharray="4 8"/>
-  </g>
-  <g fill="#8b949e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11">
-    <text x="90" y="202">cap height</text>
-    <text x="90" y="307">x-height</text>
-    <text x="90" y="412">baseline</text>
-  </g>
-
-  <!-- Floating specimen glyphs -->
-  <g fill="#21262d" font-family="Georgia, 'Times New Roman', serif" font-size="120" opacity="0.9">
-    <text x="140" y="160">A
-      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-10; 0,0" dur="7s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.35;0.55;0.35" dur="7s" repeatCount="indefinite"/>
-    </text>
-    <text x="980" y="170">g
-      <animateTransform attributeName="transform" type="translate" values="0,0; 0,12; 0,0" dur="8s" begin="0.5s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="8s" begin="0.5s" repeatCount="indefinite"/>
-    </text>
-    <text x="1040" y="520" font-size="90">Q
-      <animateTransform attributeName="transform" type="translate" values="0,0; -8,0; 0,0" dur="9s" begin="1s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.25;0.45;0.25" dur="9s" begin="1s" repeatCount="indefinite"/>
-    </text>
-    <text x="90" y="540" font-size="100">&amp;
-      <animateTransform attributeName="transform" type="translate" values="0,0; 6,-6; 0,0" dur="6.5s" begin="0.8s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.28;0.48;0.28" dur="6.5s" begin="0.8s" repeatCount="indefinite"/>
-    </text>
-  </g>
-
-  <!-- Wordmark: FONT  stroke draw then fill -->
-  <g font-family="Georgia, 'Times New Roman', serif" font-size="168" font-weight="700" letter-spacing="18" text-anchor="middle">
-    <!-- Stroke draw -->
-    <text x="600" y="360" fill="none" stroke="url(#inkGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#softGlow)"
-          stroke-dasharray="900" stroke-dashoffset="900">
-      FONT
-      <animate attributeName="stroke-dashoffset" from="900" to="0" dur="2.2s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.4 0 0.2 1"/>
-      <animate attributeName="opacity" values="1;1;0" keyTimes="0;0.75;1" dur="3.2s" fill="freeze"/>
-    </text>
-    <!-- Solid fill reveal -->
-    <text x="600" y="360" fill="url(#inkGrad)" opacity="0">
-      FONT
-      <animate attributeName="opacity" from="0" to="1" begin="1.8s" dur="0.9s" fill="freeze"/>
-      <animateTransform attributeName="transform" type="translate" values="0,8; 0,0" begin="1.8s" dur="0.9s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.2 0.8 0.2 1"/>
-    </text>
-  </g>
-
-  <!-- Cursor blink after wordmark -->
-  <rect x="860" y="248" width="4" height="120" fill="#58a6ff" opacity="0">
-    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.55;0.56;0.72;0.73;1" dur="3.5s" begin="2.4s" repeatCount="indefinite"/>
-  </rect>
-
-  <!-- Tagline -->
-  <text x="600" y="470" text-anchor="middle" fill="#8b949e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" letter-spacing="6" opacity="0">
-    TYPE · RHYTHM · FORM
-    <animate attributeName="opacity" from="0" to="1" begin="2.6s" dur="0.8s" fill="freeze"/>
-    <animateTransform attributeName="transform" type="translate" values="0,12; 0,0" begin="2.6s" dur="0.8s" fill="freeze"/>
-  </text>
-
-  <!-- Accent measure bar -->
-  <g opacity="0">
-    <rect x="480" y="500" width="240" height="2" fill="#30363d" rx="1"/>
-    <rect x="480" y="500" width="0" height="2" fill="#58a6ff" rx="1">
-      <animate attributeName="width" from="0" to="240" begin="3s" dur="1.2s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.4 0 0.2 1"/>
-    </rect>
-    <animate attributeName="opacity" from="0" to="1" begin="3s" dur="0.3s" fill="freeze"/>
-  </g>
-
-  <!-- Soft vignette -->
-  <rect width="1200" height="630" fill="none" stroke="#0d1117" stroke-width="80" opacity="0.35"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 320">
+<defs>
+<linearGradient id="bg" x1="0" x2="1"><stop offset="0%" stop-color="#200000"/><stop offset="100%" stop-color="#111111"/></linearGradient>
+</defs>
+<rect width="1280" height="320" fill="url(#bg)"/>
+<g stroke="#7a0019" stroke-width="1" opacity=".5">
+<path d="M0 80H1280"><animate attributeName="opacity" values=".2;.7;.2" dur="6s" repeatCount="indefinite"/></path>
+<path d="M0 160H1280"/><path d="M0 240H1280"/>
+</g>
+<circle cx="100" cy="80" r="4" fill="#fff">
+<animate attributeName="cx" values="100;1180;100" dur="18s" repeatCount="indefinite"/>
+</circle>
+<text x="70" y="130" fill="white" font-size="42" font-family="monospace">Cael Findley</text>
+<text x="70" y="175" fill="#dddddd" font-size="22" font-family="monospace">Computer Science @ Texas A&amp;M University</text>
+<text x="70" y="220" fill="#bbbbbb" font-size="18" font-family="monospace">AI â€¢ Software Engineering â€¢ Systems â€¢ Full Stack</text>
 </svg>
