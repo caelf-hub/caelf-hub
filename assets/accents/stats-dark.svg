@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 56" width="1280" height="56" role="img" aria-hidden="true">
+  <rect x="560" y="12" width="14" height="14" rx="2" fill="#c45c6a" opacity="0.20">
+    <animate attributeName="opacity" values="0.20;0.60;0.20" dur="2.00s" begin="0.0s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="580" y="12" width="14" height="14" rx="2" fill="#c45c6a" opacity="0.57">
+    <animate attributeName="opacity" values="0.57;0.97;0.57" dur="2.35s" begin="0.1s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="600" y="12" width="14" height="14" rx="2" fill="#c45c6a" opacity="0.24">
+    <animate attributeName="opacity" values="0.24;0.64;0.24" dur="2.70s" begin="0.2s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="620" y="12" width="14" height="14" rx="2" fill="#c45c6a" opacity="0.61">
+    <animate attributeName="opacity" values="0.61;1.00;0.61" dur="3.05s" begin="0.30000000000000004s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="640" y="12" width="14" height="14" rx="2" fill="#c45c6a" opacity="0.28">
+    <animate attributeName="opacity" values="0.28;0.68;0.28" dur="2.00s" begin="0.4s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="660" y="12" width="14" height="14" rx="2" fill="#c45c6a" opacity="0.65">
+    <animate attributeName="opacity" values="0.65;1.00;0.65" dur="2.35s" begin="0.5s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="680" y="12" width="14" height="14" rx="2" fill="#c45c6a" opacity="0.32">
+    <animate attributeName="opacity" values="0.32;0.72;0.32" dur="2.70s" begin="0.6000000000000001s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="700" y="12" width="14" height="14" rx="2" fill="#c45c6a" opacity="0.69">
+    <animate attributeName="opacity" values="0.69;1.00;0.69" dur="3.05s" begin="0.7000000000000001s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="560" y="30" width="14" height="14" rx="2" fill="#c45c6a" opacity="0.36">
+    <animate attributeName="opacity" values="0.36;0.76;0.36" dur="2.00s" begin="0.8s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="580" y="30" width="14" height="14" rx="2" fill="#c45c6a" opacity="0.73">
+    <animate attributeName="opacity" values="0.73;1.00;0.73" dur="2.35s" begin="0.9s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="600" y="30" width="14" height="14" rx="2" fill="#c45c6a" opacity="0.40">
+    <animate attributeName="opacity" values="0.40;0.80;0.40" dur="2.70s" begin="1.0s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="620" y="30" width="14" height="14" rx="2" fill="#c45c6a" opacity="0.77">
+    <animate attributeName="opacity" values="0.77;1.00;0.77" dur="3.05s" begin="1.1s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="640" y="30" width="14" height="14" rx="2" fill="#c45c6a" opacity="0.44">
+    <animate attributeName="opacity" values="0.44;0.84;0.44" dur="2.00s" begin="1.2000000000000002s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="660" y="30" width="14" height="14" rx="2" fill="#c45c6a" opacity="0.81">
+    <animate attributeName="opacity" values="0.81;1.00;0.81" dur="2.35s" begin="1.3s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="680" y="30" width="14" height="14" rx="2" fill="#c45c6a" opacity="0.48">
+    <animate attributeName="opacity" values="0.48;0.88;0.48" dur="2.70s" begin="1.4000000000000001s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="700" y="30" width="14" height="14" rx="2" fill="#c45c6a" opacity="0.85">
+    <animate attributeName="opacity" values="0.85;1.00;0.85" dur="3.05s" begin="1.5s" repeatCount="indefinite"/>
+  </rect>
+</svg>

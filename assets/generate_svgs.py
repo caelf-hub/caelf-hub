@@ -447,44 +447,12 @@ def footer_svg(theme: str) -> str:
 
 
 def divider_svg(theme: str) -> str:
-    t = THEMES[theme]
-    return f'''<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 56" width="1280" height="56" role="img" aria-hidden="true">
-  <defs>
-    <linearGradient id="dfade" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="{t['accent']}" stop-opacity="0"/>
-      <stop offset="50%" stop-color="{t['accent']}" stop-opacity="0.85"/>
-      <stop offset="100%" stop-color="{t['accent']}" stop-opacity="0"/>
-    </linearGradient>
-  </defs>
-  <path d="M120,28 H560" fill="none" stroke="url(#dfade)" stroke-width="1.25" stroke-dasharray="4 10">
-    <animate attributeName="stroke-dashoffset" from="0" to="-56" dur="4s" repeatCount="indefinite"/>
-  </path>
-  <path d="M720,28 H1160" fill="none" stroke="url(#dfade)" stroke-width="1.25" stroke-dasharray="4 10">
-    <animate attributeName="stroke-dashoffset" from="0" to="56" dur="4s" repeatCount="indefinite"/>
-  </path>
-  <circle cx="640" cy="28" r="4" fill="{t['accent']}" opacity="0.85">
-    <animate attributeName="r" values="3;5;3" dur="2.8s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0.45;1;0.45" dur="2.8s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="640" cy="28" r="10" fill="none" stroke="{t['accent']}" stroke-width="1" opacity="0.35">
-    <animate attributeName="r" values="8;14;8" dur="2.8s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0.35;0.05;0.35" dur="2.8s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="480" cy="28" r="1.4" fill="{t['particle']}" opacity="0.35">
-    <animate attributeName="cx" values="480;620;480" dur="7s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0.15;0.55;0.15" dur="7s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="800" cy="28" r="1.4" fill="{t['particle']}" opacity="0.35">
-    <animate attributeName="cx" values="800;660;800" dur="8s" begin="0.6s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0.15;0.55;0.15" dur="8s" begin="0.6s" repeatCount="indefinite"/>
-  </circle>
-</svg>
-'''
+    """Legacy alias — pulse node (used as about accent)."""
+    return accent_about(theme)
 
 
 def bridge_svg(theme: str) -> str:
-    """Animated transparent strip under the banner — keeps motion flowing into the page."""
+    """After hero: soft falling particles."""
     t = THEMES[theme]
     dots = []
     for i in range(18):
@@ -504,16 +472,267 @@ def bridge_svg(theme: str) -> str:
 '''
 
 
+def accent_about(theme: str) -> str:
+    """Breathing dual rings around a maroon core."""
+    t = THEMES[theme]
+    return f'''<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 56" width="1280" height="56" role="img" aria-hidden="true">
+  <line x1="200" y1="28" x2="560" y2="28" stroke="{t['circuit']}" stroke-width="1" opacity="0.45"/>
+  <line x1="720" y1="28" x2="1080" y2="28" stroke="{t['circuit']}" stroke-width="1" opacity="0.45"/>
+  <circle cx="640" cy="28" r="4" fill="{t['accent']}">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="640" cy="28" r="12" fill="none" stroke="{t['accent']}" stroke-width="1" opacity="0.4">
+    <animate attributeName="r" values="10;16;10" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.45;0.1;0.45" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="640" cy="28" r="20" fill="none" stroke="{t['accent']}" stroke-width="1" opacity="0.2">
+    <animate attributeName="r" values="16;24;16" dur="3s" begin="0.4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.05;0.3" dur="3s" begin="0.4s" repeatCount="indefinite"/>
+  </circle>
+</svg>
+'''
+
+
+def accent_focus(theme: str) -> str:
+    """Four nodes lighting in sequence — one per focus area."""
+    t = THEMES[theme]
+    xs = [400, 520, 640, 760]
+    parts = []
+    for i, x in enumerate(xs):
+        parts.append(f'''  <circle cx="{x}" cy="28" r="5" fill="{t['accent']}" opacity="0.25">
+    <animate attributeName="opacity" values="0.2;1;0.2" dur="3.2s" begin="{i * 0.8}s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="4;6.5;4" dur="3.2s" begin="{i * 0.8}s" repeatCount="indefinite"/>
+  </circle>''')
+        if i < len(xs) - 1:
+            x2 = xs[i + 1]
+            parts.append(f'''  <line x1="{x + 8}" y1="28" x2="{x2 - 8}" y2="28" stroke="{t['circuit']}" stroke-width="1.25" opacity="0.35">
+    <animate attributeName="opacity" values="0.2;0.7;0.2" dur="3.2s" begin="{i * 0.8 + 0.3}s" repeatCount="indefinite"/>
+  </line>''')
+    return f'''<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 56" width="1280" height="56" role="img" aria-hidden="true">
+{chr(10).join(parts)}
+</svg>
+'''
+
+
+def accent_projects(theme: str) -> str:
+    """Circuit path drawing left to right."""
+    t = THEMES[theme]
+    return f'''<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 56" width="1280" height="56" role="img" aria-hidden="true">
+  <path d="M260,28 H520 V18 H640 V38 H760 V28 H1020" fill="none" stroke="{t['accent']}" stroke-width="1.5" stroke-linecap="square" stroke-dasharray="900" stroke-dashoffset="900" opacity="0.85">
+    <animate attributeName="stroke-dashoffset" values="900;0;0;900" keyTimes="0;0.45;0.7;1" dur="6s" repeatCount="indefinite"/>
+  </path>
+  <circle cx="520" cy="18" r="2.5" fill="{t['node']}">
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.2;0.75;1" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="640" cy="38" r="2.5" fill="{t['node']}">
+    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.25;0.35;0.75;1" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="760" cy="28" r="2.5" fill="{t['node']}">
+    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.35;0.45;0.75;1" dur="6s" repeatCount="indefinite"/>
+  </circle>
+</svg>
+'''
+
+
+def accent_research(theme: str) -> str:
+    """Neural constellation — three hubs with pulsing links."""
+    t = THEMES[theme]
+    hubs = [(520, 18), (640, 38), (760, 18), (580, 40), (700, 14)]
+    lines = [
+        (0, 1), (1, 2), (0, 3), (1, 3), (1, 4), (2, 4),
+    ]
+    parts = []
+    for i, (a, b) in enumerate(lines):
+        x1, y1 = hubs[a]
+        x2, y2 = hubs[b]
+        parts.append(f'''  <line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{t['circuit']}" stroke-width="1" opacity="0.25">
+    <animate attributeName="opacity" values="0.15;0.65;0.15" dur="4s" begin="{i * 0.35}s" repeatCount="indefinite"/>
+  </line>''')
+    for i, (x, y) in enumerate(hubs):
+        parts.append(f'''  <circle cx="{x}" cy="{y}" r="3" fill="{t['accent']}" opacity="0.5">
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2.8s" begin="{i * 0.25}s" repeatCount="indefinite"/>
+  </circle>''')
+    return f'''<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 56" width="1280" height="56" role="img" aria-hidden="true">
+{chr(10).join(parts)}
+</svg>
+'''
+
+
+def accent_stack(theme: str) -> str:
+    """Rising bars — tech stack energy."""
+    t = THEMES[theme]
+    bars = []
+    heights = [10, 18, 14, 24, 16, 22, 12, 20]
+    for i, h in enumerate(heights):
+        x = 480 + i * 40
+        y = 40 - h
+        bars.append(f'''  <rect x="{x}" y="{y}" width="14" height="{h}" rx="2" fill="{t['accent']}" opacity="0.35">
+    <animate attributeName="height" values="{max(6, h-8)};{h};{max(6, h-8)}" dur="{2.4 + i * 0.15:.2f}s" begin="{i * 0.12}s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="{40 - max(6, h-8)};{y};{40 - max(6, h-8)}" dur="{2.4 + i * 0.15:.2f}s" begin="{i * 0.12}s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.25;0.85;0.25" dur="{2.4 + i * 0.15:.2f}s" begin="{i * 0.12}s" repeatCount="indefinite"/>
+  </rect>''')
+    return f'''<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 56" width="1280" height="56" role="img" aria-hidden="true">
+  <line x1="460" y1="42" x2="820" y2="42" stroke="{t['circuit']}" stroke-width="1" opacity="0.4"/>
+{chr(10).join(bars)}
+</svg>
+'''
+
+
+def accent_experience(theme: str) -> str:
+    """Chevron / arrow marching forward."""
+    t = THEMES[theme]
+    chevs = []
+    for i in range(5):
+        x = 480 + i * 70
+        chevs.append(f'''  <polyline points="{x},16 {x + 18},28 {x},40" fill="none" stroke="{t['accent']}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.2">
+    <animate attributeName="opacity" values="0.15;1;0.15" dur="2.5s" begin="{i * 0.35}s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 8,0; 0,0" dur="2.5s" begin="{i * 0.35}s" repeatCount="indefinite"/>
+  </polyline>''')
+    return f'''<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 56" width="1280" height="56" role="img" aria-hidden="true">
+{chr(10).join(chevs)}
+</svg>
+'''
+
+
+def accent_opensource(theme: str) -> str:
+    """Git-style branch fork animation."""
+    t = THEMES[theme]
+    return f'''<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 56" width="1280" height="56" role="img" aria-hidden="true">
+  <path d="M560,28 H640" fill="none" stroke="{t['circuit']}" stroke-width="1.5" opacity="0.5"/>
+  <path d="M640,28 Q700,28 740,16" fill="none" stroke="{t['accent']}" stroke-width="1.5" stroke-dasharray="120" stroke-dashoffset="120">
+    <animate attributeName="stroke-dashoffset" values="120;0;0;120" keyTimes="0;0.4;0.7;1" dur="5s" repeatCount="indefinite"/>
+  </path>
+  <path d="M640,28 Q700,28 740,40" fill="none" stroke="{t['accent']}" stroke-width="1.5" stroke-dasharray="120" stroke-dashoffset="120">
+    <animate attributeName="stroke-dashoffset" values="120;0;0;120" keyTimes="0;0.4;0.7;1" dur="5s" begin="0.35s" repeatCount="indefinite"/>
+  </path>
+  <circle cx="560" cy="28" r="4" fill="{t['accent']}">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="640" cy="28" r="3.5" fill="{t['node']}"/>
+  <circle cx="740" cy="16" r="3.5" fill="{t['accent']}" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.35;0.45;0.8;1" dur="5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="740" cy="40" r="3.5" fill="{t['accent']}" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.4;0.5;0.8;1" dur="5s" begin="0.35s" repeatCount="indefinite"/>
+  </circle>
+</svg>
+'''
+
+
+def accent_education(theme: str) -> str:
+    """Rotating diamond / academic mark."""
+    t = THEMES[theme]
+    return f'''<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 56" width="1280" height="56" role="img" aria-hidden="true">
+  <line x1="220" y1="28" x2="580" y2="28" stroke="{t['circuit']}" stroke-width="1" opacity="0.4"/>
+  <line x1="700" y1="28" x2="1060" y2="28" stroke="{t['circuit']}" stroke-width="1" opacity="0.4"/>
+  <g transform="translate(640,28)">
+    <polygon points="0,-12 12,0 0,12 -12,0" fill="none" stroke="{t['accent']}" stroke-width="1.5" opacity="0.85">
+      <animateTransform attributeName="transform" type="rotate" values="0;360" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite"/>
+    </polygon>
+    <circle cx="0" cy="0" r="3" fill="{t['accent']}">
+      <animate attributeName="r" values="2.5;4;2.5" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
+'''
+
+
+def accent_stats(theme: str) -> str:
+    """Contribution-graph style squares pulsing."""
+    t = THEMES[theme]
+    cells = []
+    pattern = [0.2, 0.45, 0.7, 0.35, 0.9, 0.25, 0.55, 0.8, 0.4, 0.65, 0.3, 0.95, 0.5, 0.75, 0.35]
+    for i, base in enumerate(pattern):
+        x = 500 + (i % 15) * 18
+        y = 16 + (i // 15) * 18
+        # two rows
+        row = i // 8
+        col = i % 8
+        x = 560 + col * 20
+        y = 12 + row * 20
+        if i >= 16:
+            break
+        cells.append(f'''  <rect x="{x}" y="{y}" width="14" height="14" rx="2" fill="{t['accent']}" opacity="{base}">
+    <animate attributeName="opacity" values="{base};{min(1, base + 0.35):.2f};{base}" dur="{2.2 + (i % 5) * 0.3:.1f}s" begin="{i * 0.12}s" repeatCount="indefinite"/>
+  </rect>''')
+    # rebuild clean 2x8
+    cells = []
+    for row in range(2):
+        for col in range(8):
+            i = row * 8 + col
+            base = 0.2 + ((i * 37) % 70) / 100
+            x = 560 + col * 20
+            y = 12 + row * 18
+            cells.append(f'''  <rect x="{x}" y="{y}" width="14" height="14" rx="2" fill="{t['accent']}" opacity="{base:.2f}">
+    <animate attributeName="opacity" values="{base:.2f};{min(1.0, base + 0.4):.2f};{base:.2f}" dur="{2.0 + (i % 4) * 0.35:.2f}s" begin="{i * 0.1}s" repeatCount="indefinite"/>
+  </rect>''')
+    return f'''<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 56" width="1280" height="56" role="img" aria-hidden="true">
+{chr(10).join(cells)}
+</svg>
+'''
+
+
+def accent_connect(theme: str) -> str:
+    """Two nodes drawing a link toward each other."""
+    t = THEMES[theme]
+    return f'''<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 56" width="1280" height="56" role="img" aria-hidden="true">
+  <circle cx="520" cy="28" r="5" fill="{t['accent']}">
+    <animate attributeName="cx" values="500;520;500" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="760" cy="28" r="5" fill="{t['accent']}">
+    <animate attributeName="cx" values="780;760;780" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <line x1="530" y1="28" x2="750" y2="28" stroke="{t['accent']}" stroke-width="1.5" stroke-dasharray="8 8" opacity="0.55">
+    <animate attributeName="stroke-dashoffset" from="0" to="-32" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.85;0.3" dur="4s" repeatCount="indefinite"/>
+  </line>
+  <circle cx="640" cy="28" r="2.5" fill="{t['node']}">
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+  </circle>
+</svg>
+'''
+
+
+ACCENTS = {
+    "bridge": bridge_svg,
+    "about": accent_about,
+    "focus": accent_focus,
+    "projects": accent_projects,
+    "research": accent_research,
+    "stack": accent_stack,
+    "experience": accent_experience,
+    "opensource": accent_opensource,
+    "education": accent_education,
+    "stats": accent_stats,
+    "connect": accent_connect,
+}
+
+
 def main():
+    accents_dir = OUT / "accents"
+    accents_dir.mkdir(exist_ok=True)
     for theme in ("dark", "light"):
         (OUT / f"header-{theme}.svg").write_text(header_svg(theme), encoding="utf-8")
         (OUT / f"footer-{theme}.svg").write_text(footer_svg(theme), encoding="utf-8")
-        (OUT / f"divider-{theme}.svg").write_text(divider_svg(theme), encoding="utf-8")
+        # keep root bridge/divider for backwards compatibility
         (OUT / f"bridge-{theme}.svg").write_text(bridge_svg(theme), encoding="utf-8")
-        for name in ("header", "footer", "divider", "bridge"):
-            p = OUT / f"{name}-{theme}.svg"
-            text = p.read_text(encoding="utf-8")
-            print(f"{p.name}: {len(text.splitlines())} lines, {len(text)} bytes")
+        (OUT / f"divider-{theme}.svg").write_text(accent_about(theme), encoding="utf-8")
+        for name, fn in ACCENTS.items():
+            path = accents_dir / f"{name}-{theme}.svg"
+            path.write_text(fn(theme), encoding="utf-8")
+            text = path.read_text(encoding="utf-8")
+            print(f"{path.relative_to(OUT.parent)}: {len(text.splitlines())} lines")
 
 
 if __name__ == "__main__":

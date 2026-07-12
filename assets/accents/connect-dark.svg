@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 56" width="1280" height="56" role="img" aria-hidden="true">
+  <circle cx="520" cy="28" r="5" fill="#c45c6a">
+    <animate attributeName="cx" values="500;520;500" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="760" cy="28" r="5" fill="#c45c6a">
+    <animate attributeName="cx" values="780;760;780" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <line x1="530" y1="28" x2="750" y2="28" stroke="#c45c6a" stroke-width="1.5" stroke-dasharray="8 8" opacity="0.55">
+    <animate attributeName="stroke-dashoffset" from="0" to="-32" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.85;0.3" dur="4s" repeatCount="indefinite"/>
+  </line>
+  <circle cx="640" cy="28" r="2.5" fill="#e8b4ba">
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+  </circle>
+</svg>

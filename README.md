@@ -10,15 +10,15 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/bridge-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/bridge-light.svg">
-    <img src="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/bridge-light.svg" alt="" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/bridge-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/bridge-light.svg">
+    <img src="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/bridge-light.svg" alt="" width="100%">
   </picture>
 </p>
 
 <p align="center">
-  <em>Computer Science  Texas A&amp;M University  College Station</em><br/>
-  <strong>Gig 'em</strong>  building as an Aggie engineer.
+  <em>Computer Science Â· Texas A&amp;M University Â· College Station</em><br/>
+  <strong>Gig 'em</strong> Â· building as an Aggie engineer.
 </p>
 
 <p align="center">
@@ -35,9 +35,9 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/divider-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/divider-light.svg">
-    <img src="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/divider-light.svg" alt="" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/about-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/about-light.svg">
+    <img src="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/about-light.svg" alt="" width="100%">
   </picture>
 </p>
 
@@ -51,9 +51,9 @@ I care about clear systems, careful interfaces, and work that holds up under rea
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/divider-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/divider-light.svg">
-    <img src="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/divider-light.svg" alt="" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/focus-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/focus-light.svg">
+    <img src="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/focus-light.svg" alt="" width="100%">
   </picture>
 </p>
 
@@ -64,21 +64,21 @@ I care about clear systems, careful interfaces, and work that holds up under rea
     <tr>
       <td align="center" width="280">
         <strong>AI Systems</strong><br/>
-        <sub>Planning  scheduling  LLM workflows</sub>
+        <sub>Planning Â· scheduling Â· LLM workflows</sub>
       </td>
       <td align="center" width="280">
         <strong>Full Stack</strong><br/>
-        <sub>Web  mobile  production product work</sub>
+        <sub>Web Â· mobile Â· production product work</sub>
       </td>
     </tr>
     <tr>
       <td align="center" width="280">
         <strong>Systems</strong><br/>
-        <sub>Low-level experiments  tooling</sub>
+        <sub>Low-level experiments Â· tooling</sub>
       </td>
       <td align="center" width="280">
         <strong>Applied ML</strong><br/>
-        <sub>RAG  transformers  vector search</sub>
+        <sub>RAG Â· transformers Â· vector search</sub>
       </td>
     </tr>
   </table>
@@ -86,9 +86,9 @@ I care about clear systems, careful interfaces, and work that holds up under rea
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/divider-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/divider-light.svg">
-    <img src="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/divider-light.svg" alt="" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/projects-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/projects-light.svg">
+    <img src="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/projects-light.svg" alt="" width="100%">
   </picture>
 </p>
 
@@ -171,9 +171,9 @@ I care about clear systems, careful interfaces, and work that holds up under rea
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/divider-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/divider-light.svg">
-    <img src="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/divider-light.svg" alt="" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/research-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/research-light.svg">
+    <img src="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/research-light.svg" alt="" width="100%">
   </picture>
 </p>
 
@@ -181,19 +181,19 @@ I care about clear systems, careful interfaces, and work that holds up under rea
 
 <p align="center">
   Large language models &amp; RAG
-  
+  Â·
   Scheduling &amp; planning systems
-  
+  Â·
   Model-to-product full stack
-  
+  Â·
   Embedded &amp; low-level software
 </p>
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/divider-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/divider-light.svg">
-    <img src="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/divider-light.svg" alt="" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/stack-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/stack-light.svg">
+    <img src="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/stack-light.svg" alt="" width="100%">
   </picture>
 </p>
 
@@ -237,9 +237,9 @@ I care about clear systems, careful interfaces, and work that holds up under rea
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/divider-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/divider-light.svg">
-    <img src="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/divider-light.svg" alt="" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/experience-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/experience-light.svg">
+    <img src="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/experience-light.svg" alt="" width="100%">
   </picture>
 </p>
 
@@ -247,14 +247,14 @@ I care about clear systems, careful interfaces, and work that holds up under rea
 
 <p align="center">
   <strong>Software Developer</strong><br/>
-  <sub>Full-stack products  reliable interfaces  shipping features that matter</sub>
+  <sub>Full-stack products Â· reliable interfaces Â· shipping features that matter</sub>
 </p>
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/divider-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/divider-light.svg">
-    <img src="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/divider-light.svg" alt="" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/opensource-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/opensource-light.svg">
+    <img src="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/opensource-light.svg" alt="" width="100%">
   </picture>
 </p>
 
@@ -273,9 +273,9 @@ I care about clear systems, careful interfaces, and work that holds up under rea
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/divider-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/divider-light.svg">
-    <img src="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/divider-light.svg" alt="" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/education-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/education-light.svg">
+    <img src="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/education-light.svg" alt="" width="100%">
   </picture>
 </p>
 
@@ -283,15 +283,15 @@ I care about clear systems, careful interfaces, and work that holds up under rea
 
 <p align="center">
   <strong>Texas A&amp;M University</strong><br/>
-  Computer Science  College Station, Texas<br/>
+  Computer Science Â· College Station, Texas<br/>
   <em>Gig 'em</em>
 </p>
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/divider-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/divider-light.svg">
-    <img src="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/divider-light.svg" alt="" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/stats-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/stats-light.svg">
+    <img src="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/stats-light.svg" alt="" width="100%">
   </picture>
 </p>
 
@@ -308,9 +308,9 @@ I care about clear systems, careful interfaces, and work that holds up under rea
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/divider-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/divider-light.svg">
-    <img src="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/divider-light.svg" alt="" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/connect-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/connect-light.svg">
+    <img src="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/accents/connect-light.svg" alt="" width="100%">
   </picture>
 </p>
 

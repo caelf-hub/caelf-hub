@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 56" width="1280" height="56" role="img" aria-hidden="true">
+  <polyline points="480,16 498,28 480,40" fill="none" stroke="#c45c6a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.2">
+    <animate attributeName="opacity" values="0.15;1;0.15" dur="2.5s" begin="0.0s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 8,0; 0,0" dur="2.5s" begin="0.0s" repeatCount="indefinite"/>
+  </polyline>
+  <polyline points="550,16 568,28 550,40" fill="none" stroke="#c45c6a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.2">
+    <animate attributeName="opacity" values="0.15;1;0.15" dur="2.5s" begin="0.35s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 8,0; 0,0" dur="2.5s" begin="0.35s" repeatCount="indefinite"/>
+  </polyline>
+  <polyline points="620,16 638,28 620,40" fill="none" stroke="#c45c6a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.2">
+    <animate attributeName="opacity" values="0.15;1;0.15" dur="2.5s" begin="0.7s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 8,0; 0,0" dur="2.5s" begin="0.7s" repeatCount="indefinite"/>
+  </polyline>
+  <polyline points="690,16 708,28 690,40" fill="none" stroke="#c45c6a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.2">
+    <animate attributeName="opacity" values="0.15;1;0.15" dur="2.5s" begin="1.0499999999999998s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 8,0; 0,0" dur="2.5s" begin="1.0499999999999998s" repeatCount="indefinite"/>
+  </polyline>
+  <polyline points="760,16 778,28 760,40" fill="none" stroke="#c45c6a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.2">
+    <animate attributeName="opacity" values="0.15;1;0.15" dur="2.5s" begin="1.4s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 8,0; 0,0" dur="2.5s" begin="1.4s" repeatCount="indefinite"/>
+  </polyline>
+</svg>

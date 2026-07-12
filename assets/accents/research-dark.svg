@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 56" width="1280" height="56" role="img" aria-hidden="true">
+  <line x1="520" y1="18" x2="640" y2="38" stroke="#6b3038" stroke-width="1" opacity="0.25">
+    <animate attributeName="opacity" values="0.15;0.65;0.15" dur="4s" begin="0.0s" repeatCount="indefinite"/>
+  </line>
+  <line x1="640" y1="38" x2="760" y2="18" stroke="#6b3038" stroke-width="1" opacity="0.25">
+    <animate attributeName="opacity" values="0.15;0.65;0.15" dur="4s" begin="0.35s" repeatCount="indefinite"/>
+  </line>
+  <line x1="520" y1="18" x2="580" y2="40" stroke="#6b3038" stroke-width="1" opacity="0.25">
+    <animate attributeName="opacity" values="0.15;0.65;0.15" dur="4s" begin="0.7s" repeatCount="indefinite"/>
+  </line>
+  <line x1="640" y1="38" x2="580" y2="40" stroke="#6b3038" stroke-width="1" opacity="0.25">
+    <animate attributeName="opacity" values="0.15;0.65;0.15" dur="4s" begin="1.0499999999999998s" repeatCount="indefinite"/>
+  </line>
+  <line x1="640" y1="38" x2="700" y2="14" stroke="#6b3038" stroke-width="1" opacity="0.25">
+    <animate attributeName="opacity" values="0.15;0.65;0.15" dur="4s" begin="1.4s" repeatCount="indefinite"/>
+  </line>
+  <line x1="760" y1="18" x2="700" y2="14" stroke="#6b3038" stroke-width="1" opacity="0.25">
+    <animate attributeName="opacity" values="0.15;0.65;0.15" dur="4s" begin="1.75s" repeatCount="indefinite"/>
+  </line>
+  <circle cx="520" cy="18" r="3" fill="#c45c6a" opacity="0.5">
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2.8s" begin="0.0s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="640" cy="38" r="3" fill="#c45c6a" opacity="0.5">
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2.8s" begin="0.25s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="760" cy="18" r="3" fill="#c45c6a" opacity="0.5">
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2.8s" begin="0.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="580" cy="40" r="3" fill="#c45c6a" opacity="0.5">
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2.8s" begin="0.75s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="700" cy="14" r="3" fill="#c45c6a" opacity="0.5">
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2.8s" begin="1.0s" repeatCount="indefinite"/>
+  </circle>
+</svg>

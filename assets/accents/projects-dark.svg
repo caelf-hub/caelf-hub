@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 56" width="1280" height="56" role="img" aria-hidden="true">
+  <path d="M260,28 H520 V18 H640 V38 H760 V28 H1020" fill="none" stroke="#c45c6a" stroke-width="1.5" stroke-linecap="square" stroke-dasharray="900" stroke-dashoffset="900" opacity="0.85">
+    <animate attributeName="stroke-dashoffset" values="900;0;0;900" keyTimes="0;0.45;0.7;1" dur="6s" repeatCount="indefinite"/>
+  </path>
+  <circle cx="520" cy="18" r="2.5" fill="#e8b4ba">
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.2;0.75;1" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="640" cy="38" r="2.5" fill="#e8b4ba">
+    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.25;0.35;0.75;1" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="760" cy="28" r="2.5" fill="#e8b4ba">
+    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.35;0.45;0.75;1" dur="6s" repeatCount="indefinite"/>
+  </circle>
+</svg>
