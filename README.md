@@ -9,8 +9,16 @@
 </p>
 
 <p align="center">
-  <em>Computer Science ∑ Texas A&amp;M University ∑ College Station</em><br/>
-  <strong>Gig 'em</strong> ó building as an Aggie engineer.
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/bridge-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/bridge-light.svg">
+    <img src="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/assets/bridge-light.svg" alt="" width="100%">
+  </picture>
+</p>
+
+<p align="center">
+  <em>Computer Science ù Texas A&amp;M University ù College Station</em><br/>
+  <strong>Gig 'em</strong> ù building as an Aggie engineer.
 </p>
 
 <p align="center">
@@ -56,21 +64,21 @@ I care about clear systems, careful interfaces, and work that holds up under rea
     <tr>
       <td align="center" width="280">
         <strong>AI Systems</strong><br/>
-        <sub>Planning ∑ scheduling ∑ LLM workflows</sub>
+        <sub>Planning ù scheduling ù LLM workflows</sub>
       </td>
       <td align="center" width="280">
         <strong>Full Stack</strong><br/>
-        <sub>Web ∑ mobile ∑ production product work</sub>
+        <sub>Web ù mobile ù production product work</sub>
       </td>
     </tr>
     <tr>
       <td align="center" width="280">
         <strong>Systems</strong><br/>
-        <sub>Low-level experiments ∑ tooling</sub>
+        <sub>Low-level experiments ù tooling</sub>
       </td>
       <td align="center" width="280">
         <strong>Applied ML</strong><br/>
-        <sub>RAG ∑ transformers ∑ vector search</sub>
+        <sub>RAG ù transformers ù vector search</sub>
       </td>
     </tr>
   </table>
@@ -173,11 +181,11 @@ I care about clear systems, careful interfaces, and work that holds up under rea
 
 <p align="center">
   Large language models &amp; RAG
-  ∑
+  ù
   Scheduling &amp; planning systems
-  ∑
+  ù
   Model-to-product full stack
-  ∑
+  ù
   Embedded &amp; low-level software
 </p>
 
@@ -239,7 +247,7 @@ I care about clear systems, careful interfaces, and work that holds up under rea
 
 <p align="center">
   <strong>Software Developer</strong><br/>
-  <sub>Full-stack products ∑ reliable interfaces ∑ shipping features that matter</sub>
+  <sub>Full-stack products ù reliable interfaces ù shipping features that matter</sub>
 </p>
 
 <p align="center">
@@ -275,7 +283,7 @@ I care about clear systems, careful interfaces, and work that holds up under rea
 
 <p align="center">
   <strong>Texas A&amp;M University</strong><br/>
-  Computer Science ∑ College Station, Texas<br/>
+  Computer Science ù College Station, Texas<br/>
   <em>Gig 'em</em>
 </p>
 

@@ -1,8 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 48" width="1280" height="48" role="img" aria-hidden="true">
-  <rect width="1280" height="48" fill="none"/>
-  <line x1="80" y1="24" x2="560" y2="24" stroke="#d4b8bc" stroke-width="1" opacity="0.9"/>
-  <circle cx="640" cy="24" r="3.5" fill="#500000">
-    <animate attributeName="opacity" values="0.45;1;0.45" dur="4s" repeatCount="indefinite"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 56" width="1280" height="56" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="dfade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#500000" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#500000" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#500000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path d="M120,28 H560" fill="none" stroke="url(#dfade)" stroke-width="1.25" stroke-dasharray="4 10">
+    <animate attributeName="stroke-dashoffset" from="0" to="-56" dur="4s" repeatCount="indefinite"/>
+  </path>
+  <path d="M720,28 H1160" fill="none" stroke="url(#dfade)" stroke-width="1.25" stroke-dasharray="4 10">
+    <animate attributeName="stroke-dashoffset" from="0" to="56" dur="4s" repeatCount="indefinite"/>
+  </path>
+  <circle cx="640" cy="28" r="4" fill="#500000" opacity="0.85">
+    <animate attributeName="r" values="3;5;3" dur="2.8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.45;1;0.45" dur="2.8s" repeatCount="indefinite"/>
   </circle>
-  <line x1="720" y1="24" x2="1200" y2="24" stroke="#d4b8bc" stroke-width="1" opacity="0.9"/>
+  <circle cx="640" cy="28" r="10" fill="none" stroke="#500000" stroke-width="1" opacity="0.35">
+    <animate attributeName="r" values="8;14;8" dur="2.8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.35;0.05;0.35" dur="2.8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="480" cy="28" r="1.4" fill="#500000" opacity="0.35">
+    <animate attributeName="cx" values="480;620;480" dur="7s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.15;0.55;0.15" dur="7s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="800" cy="28" r="1.4" fill="#500000" opacity="0.35">
+    <animate attributeName="cx" values="800;660;800" dur="8s" begin="0.6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.15;0.55;0.15" dur="8s" begin="0.6s" repeatCount="indefinite"/>
+  </circle>
 </svg>

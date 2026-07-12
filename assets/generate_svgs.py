@@ -8,10 +8,11 @@ FONT_UI = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans
 FONT_MONO = "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
 
 # Texas A&M Aggie Maroon (#500000) as primary brand signal
+# bg0 matched to GitHub canvas so soft fades blend cleanly
 THEMES = {
     "dark": {
-        "bg0": "#100808",
-        "bg1": "#1a0e10",
+        "bg0": "#0d1117",
+        "bg1": "#161016",
         "grid": "#4a2428",
         "grid_faint": "#2a1618",
         "ink": "#faf7f7",
@@ -27,12 +28,12 @@ THEMES = {
         "mesh_c": "#301018",
         "particle": "#e8c8cc",
         "cursor": "#e8b4ba",
-        "vignette": "#100808",
+        "vignette": "#0d1117",
         "rail": "#500000",
         "white": "#ffffff",
     },
     "light": {
-        "bg0": "#fffbfb",
+        "bg0": "#ffffff",
         "bg1": "#f7f0f0",
         "grid": "#d4b8bc",
         "grid_faint": "#eadfe1",
@@ -49,7 +50,7 @@ THEMES = {
         "mesh_c": "#efe0e2",
         "particle": "#500000",
         "cursor": "#500000",
-        "vignette": "#fffbfb",
+        "vignette": "#ffffff",
         "rail": "#500000",
         "white": "#ffffff",
     },
@@ -182,10 +183,24 @@ def mesh_layer(t: dict) -> str:
       <stop offset="100%" stop-color="{t['bg0']}" stop-opacity="0"/>
       <animate attributeName="cx" values="55%;60%;50%;55%" dur="20s" repeatCount="indefinite"/>
     </radialGradient>
-    <clipPath id="frame">
-      <rect width="1280" height="360" rx="0"/>
-    </clipPath>
+    <!-- Soft blend into GitHub page background -->
+    <linearGradient id="edgeFadeY" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="white" stop-opacity="0"/>
+      <stop offset="8%" stop-color="white" stop-opacity="1"/>
+      <stop offset="72%" stop-color="white" stop-opacity="1"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="edgeFadeX" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="white" stop-opacity="0.15"/>
+      <stop offset="4%" stop-color="white" stop-opacity="1"/>
+      <stop offset="96%" stop-color="white" stop-opacity="1"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0.15"/>
+    </linearGradient>
+    <mask id="pageBlend" maskUnits="userSpaceOnUse" x="0" y="0" width="1280" height="360">
+      <rect width="1280" height="360" fill="url(#edgeFadeY)"/>
+    </mask>
   </defs>
+  <g mask="url(#pageBlend)">
   <rect width="1280" height="360" fill="url(#bgGrad)"/>
   <rect width="1280" height="360" fill="url(#mesh1)">
     <animate attributeName="opacity" values="0.7;1;0.7" dur="14s" repeatCount="indefinite"/>
@@ -194,6 +209,21 @@ def mesh_layer(t: dict) -> str:
     <animate attributeName="opacity" values="0.6;0.95;0.6" dur="16s" begin="1s" repeatCount="indefinite"/>
   </rect>
   <rect width="1280" height="360" fill="url(#mesh3)" opacity="0.8"/>
+'''
+
+
+def vignette(t: dict, height: int = 360) -> str:
+    # Close the mask group opened in mesh_layer; no hard box edge
+    return "  </g>\n"
+
+
+def header_svg(theme: str) -> str:
+    t = THEMES[theme]
+    return f'''<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 360" width="1280" height="360" role="img" aria-labelledby="title desc">
+  <title id="title">Cael Findley — Computer Science, Texas A&amp;M</title>
+  <desc id="desc">Animated profile banner ({theme} mode): engineering grid, circuit traces, and typewriter introduction</desc>
+{mesh_layer(t)}{grid_layer(t)}{particles_layer(t)}{streams_layer(t)}{neural_layer(t)}{circuit_layer(t)}{brand_rail(t)}{hero_text(t)}{vignette(t)}</svg>
 '''
 
 
@@ -346,32 +376,43 @@ def hero_text(t: dict) -> str:
   <g font-family="{FONT_MONO}" font-size="9" fill="{t['accent']}" opacity="0.55">
     <text x="64" y="28">AGGIE</text>
     <text x="1220" y="28" text-anchor="end">MAROON #500000</text>
-    <text x="64" y="348">CS · TEXAS A&amp;M</text>
-    <text x="1220" y="348" text-anchor="end">COLLEGE STATION</text>
+    <text x="64" y="318">CS · TEXAS A&amp;M</text>
+    <text x="1220" y="318" text-anchor="end">COLLEGE STATION</text>
   </g>
-'''
-
-
-def vignette(t: dict, height: int = 360) -> str:
-    return f'''  <rect width="1280" height="{height}" fill="none" stroke="{t['vignette']}" stroke-width="48" opacity="0.45"/>
-'''
-
-
-def header_svg(theme: str) -> str:
-    t = THEMES[theme]
-    return f'''<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 360" width="1280" height="360" role="img" aria-labelledby="title desc">
-  <title id="title">Cael Findley — Computer Science, Texas A&amp;M</title>
-  <desc id="desc">Animated profile banner ({theme} mode): engineering grid, circuit traces, and typewriter introduction</desc>
-{mesh_layer(t)}{grid_layer(t)}{particles_layer(t)}{streams_layer(t)}{neural_layer(t)}{circuit_layer(t)}{brand_rail(t)}{hero_text(t)}{vignette(t)}</svg>
 '''
 
 
 def footer_svg(theme: str) -> str:
     t = THEMES[theme]
     particles = PARTICLES[:36]
-    lines = [
-        f'''<?xml version="1.0" encoding="UTF-8"?>
+    body = []
+    body.append(f'  <g stroke="{t["grid_faint"]}" stroke-width="1" fill="none" opacity="0.45">')
+    for x in range(0, 1281, 40):
+        body.append(f'    <line x1="{x}" y1="0" x2="{x}" y2="120"/>')
+    for y in range(0, 121, 40):
+        body.append(f'    <line x1="0" y1="{y}" x2="1280" y2="{y}"/>')
+    body.append('  </g>')
+    body.append(f'''  <line x1="64" y1="28" x2="1216" y2="28" stroke="{t['accent']}" stroke-width="1.25" opacity="0.55">
+    <animate attributeName="opacity" values="0.35;0.8;0.35" dur="8s" repeatCount="indefinite"/>
+  </line>
+''')
+    body.append(f'  <g fill="{t["particle"]}">')
+    for i, (x, y, r, op, dur, dx, dy, delay) in enumerate(particles):
+        fy = 40 + (y % 50)
+        body.append(f'''    <circle cx="{x}" cy="{fy}" r="{r * 0.85:.2f}" opacity="{op * 0.8:.2f}">
+      <animateTransform attributeName="transform" type="translate" values="0,0; {dx * 0.5:.0f},{dy * 0.3:.0f}; 0,0" dur="{dur}s" begin="{delay}s" repeatCount="indefinite"/>
+    </circle>''')
+    body.append('  </g>')
+    body.append(f'''  <circle cx="76" cy="68" r="4" fill="{t['accent']}">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <text x="92" y="68" fill="{t['ink']}" font-family="{FONT_UI}" font-size="15" font-weight="600">Cael Findley</text>
+  <text x="92" y="86" fill="{t['accent']}" font-family="{FONT_MONO}" font-size="10" letter-spacing="1.5">GIG &apos;EM</text>
+  <text x="1216" y="68" text-anchor="end" fill="{t['accent']}" font-family="{FONT_MONO}" font-size="11" font-weight="600" letter-spacing="1.5">TEXAS A&amp;M UNIVERSITY</text>
+  <text x="1216" y="86" text-anchor="end" fill="{t['faint']}" font-family="{FONT_MONO}" font-size="10" letter-spacing="1">COMPUTER SCIENCE</text>
+''')
+    inner = "\n".join(body)
+    return f'''<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 120" width="1280" height="120" role="img" aria-labelledby="ftitle">
   <title id="ftitle">Cael Findley — footer</title>
   <defs>
@@ -383,56 +424,96 @@ def footer_svg(theme: str) -> str:
       <stop offset="0%" stop-color="{t['accent_soft']}" stop-opacity="0.35"/>
       <stop offset="100%" stop-color="{t['bg0']}" stop-opacity="0"/>
     </radialGradient>
+    <linearGradient id="ffade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="white" stop-opacity="0"/>
+      <stop offset="28%" stop-color="white" stop-opacity="1"/>
+      <stop offset="100%" stop-color="white" stop-opacity="1"/>
+    </linearGradient>
+    <mask id="ffadeMask" maskUnits="userSpaceOnUse" x="0" y="0" width="1280" height="120">
+      <rect width="1280" height="120" fill="url(#ffade)"/>
+    </mask>
   </defs>
+  <g mask="url(#ffadeMask)">
   <rect width="1280" height="120" fill="url(#fbg)"/>
   <rect width="1280" height="120" fill="url(#fmesh)">
     <animate attributeName="opacity" values="0.5;1;0.5" dur="12s" repeatCount="indefinite"/>
   </rect>
   <rect x="0" y="0" width="8" height="120" fill="{t['rail']}"/>
   <rect x="8" y="0" width="2" height="120" fill="{t['white']}" opacity="0.55"/>
-''']
-    # Mini grid
-    lines.append(f'  <g stroke="{t["grid_faint"]}" stroke-width="1" fill="none" opacity="0.5">')
-    for x in range(0, 1281, 40):
-        lines.append(f'    <line x1="{x}" y1="0" x2="{x}" y2="120"/>')
-    for y in range(0, 121, 40):
-        lines.append(f'    <line x1="0" y1="{y}" x2="1280" y2="{y}"/>')
-    lines.append('  </g>')
-    # Rule
-    lines.append(f'''  <line x1="64" y1="28" x2="1216" y2="28" stroke="{t['accent']}" stroke-width="1.25" opacity="0.55">
-    <animate attributeName="opacity" values="0.35;0.8;0.35" dur="8s" repeatCount="indefinite"/>
-  </line>
-''')
-    # Particles
-    lines.append(f'  <g fill="{t["particle"]}">')
-    for i, (x, y, r, op, dur, dx, dy, delay) in enumerate(particles):
-        fy = 40 + (y % 50)
-        lines.append(f'''    <circle cx="{x}" cy="{fy}" r="{r * 0.85:.2f}" opacity="{op * 0.8:.2f}">
-      <animateTransform attributeName="transform" type="translate" values="0,0; {dx * 0.5:.0f},{dy * 0.3:.0f}; 0,0" dur="{dur}s" begin="{delay}s" repeatCount="indefinite"/>
-    </circle>''')
-    lines.append('  </g>')
-    # Mark + text
-    lines.append(f'''  <circle cx="76" cy="68" r="4" fill="{t['accent']}">
-    <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
-  </circle>
-  <text x="92" y="68" fill="{t['ink']}" font-family="{FONT_UI}" font-size="15" font-weight="600">Cael Findley</text>
-  <text x="92" y="86" fill="{t['accent']}" font-family="{FONT_MONO}" font-size="10" letter-spacing="1.5">GIG &apos;EM</text>
-  <text x="1216" y="68" text-anchor="end" fill="{t['accent']}" font-family="{FONT_MONO}" font-size="11" font-weight="600" letter-spacing="1.5">TEXAS A&amp;M UNIVERSITY</text>
-  <text x="1216" y="86" text-anchor="end" fill="{t['faint']}" font-family="{FONT_MONO}" font-size="10" letter-spacing="1">COMPUTER SCIENCE</text>
-  <rect width="1280" height="120" fill="none" stroke="{t['vignette']}" stroke-width="32" opacity="0.35"/>
+{inner}
+  </g>
 </svg>
-''')
-    return '\n'.join(lines)
+'''
+
+
+def divider_svg(theme: str) -> str:
+    t = THEMES[theme]
+    return f'''<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 56" width="1280" height="56" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="dfade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="{t['accent']}" stop-opacity="0"/>
+      <stop offset="50%" stop-color="{t['accent']}" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="{t['accent']}" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path d="M120,28 H560" fill="none" stroke="url(#dfade)" stroke-width="1.25" stroke-dasharray="4 10">
+    <animate attributeName="stroke-dashoffset" from="0" to="-56" dur="4s" repeatCount="indefinite"/>
+  </path>
+  <path d="M720,28 H1160" fill="none" stroke="url(#dfade)" stroke-width="1.25" stroke-dasharray="4 10">
+    <animate attributeName="stroke-dashoffset" from="0" to="56" dur="4s" repeatCount="indefinite"/>
+  </path>
+  <circle cx="640" cy="28" r="4" fill="{t['accent']}" opacity="0.85">
+    <animate attributeName="r" values="3;5;3" dur="2.8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.45;1;0.45" dur="2.8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="640" cy="28" r="10" fill="none" stroke="{t['accent']}" stroke-width="1" opacity="0.35">
+    <animate attributeName="r" values="8;14;8" dur="2.8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.35;0.05;0.35" dur="2.8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="480" cy="28" r="1.4" fill="{t['particle']}" opacity="0.35">
+    <animate attributeName="cx" values="480;620;480" dur="7s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.15;0.55;0.15" dur="7s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="800" cy="28" r="1.4" fill="{t['particle']}" opacity="0.35">
+    <animate attributeName="cx" values="800;660;800" dur="8s" begin="0.6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.15;0.55;0.15" dur="8s" begin="0.6s" repeatCount="indefinite"/>
+  </circle>
+</svg>
+'''
+
+
+def bridge_svg(theme: str) -> str:
+    """Animated transparent strip under the banner — keeps motion flowing into the page."""
+    t = THEMES[theme]
+    dots = []
+    for i in range(18):
+        x = 80 + i * 64
+        delay = i * 0.22
+        dots.append(f'''  <circle cx="{x}" cy="20" r="1.6" fill="{t['accent']}" opacity="0.2">
+    <animate attributeName="cy" values="8;40;8" dur="3.6s" begin="{delay}s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.1;0.7;0.1" dur="3.6s" begin="{delay}s" repeatCount="indefinite"/>
+  </circle>''')
+    return f'''<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 48" width="1280" height="48" role="img" aria-hidden="true">
+  <path d="M200,24 H1080" fill="none" stroke="{t['accent']}" stroke-width="1" stroke-dasharray="2 12" opacity="0.35">
+    <animate attributeName="stroke-dashoffset" from="0" to="-56" dur="5s" repeatCount="indefinite"/>
+  </path>
+{chr(10).join(dots)}
+</svg>
+'''
 
 
 def main():
     for theme in ("dark", "light"):
         (OUT / f"header-{theme}.svg").write_text(header_svg(theme), encoding="utf-8")
         (OUT / f"footer-{theme}.svg").write_text(footer_svg(theme), encoding="utf-8")
-        h = (OUT / f"header-{theme}.svg").read_text(encoding="utf-8")
-        f = (OUT / f"footer-{theme}.svg").read_text(encoding="utf-8")
-        print(f"header-{theme}.svg: {len(h.splitlines())} lines, {len(h)} bytes")
-        print(f"footer-{theme}.svg: {len(f.splitlines())} lines, {len(f)} bytes")
+        (OUT / f"divider-{theme}.svg").write_text(divider_svg(theme), encoding="utf-8")
+        (OUT / f"bridge-{theme}.svg").write_text(bridge_svg(theme), encoding="utf-8")
+        for name in ("header", "footer", "divider", "bridge"):
+            p = OUT / f"{name}-{theme}.svg"
+            text = p.read_text(encoding="utf-8")
+            print(f"{p.name}: {len(text.splitlines())} lines, {len(text)} bytes")
 
 
 if __name__ == "__main__":

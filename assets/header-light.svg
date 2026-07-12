@@ -4,37 +4,51 @@
   <desc id="desc">Animated profile banner (light mode): engineering grid, circuit traces, and typewriter introduction</desc>
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#fffbfb">
-        <animate attributeName="stop-color" values="#fffbfb;#f2e4e6;#fffbfb" dur="18s" repeatCount="indefinite"/>
+      <stop offset="0%" stop-color="#ffffff">
+        <animate attributeName="stop-color" values="#ffffff;#f2e4e6;#ffffff" dur="18s" repeatCount="indefinite"/>
       </stop>
       <stop offset="45%" stop-color="#f7f0f0">
         <animate attributeName="stop-color" values="#f7f0f0;#f6ecee;#f7f0f0" dur="18s" begin="2s" repeatCount="indefinite"/>
       </stop>
-      <stop offset="100%" stop-color="#fffbfb">
-        <animate attributeName="stop-color" values="#fffbfb;#efe0e2;#fffbfb" dur="18s" begin="4s" repeatCount="indefinite"/>
+      <stop offset="100%" stop-color="#ffffff">
+        <animate attributeName="stop-color" values="#ffffff;#efe0e2;#ffffff" dur="18s" begin="4s" repeatCount="indefinite"/>
       </stop>
     </linearGradient>
     <radialGradient id="mesh1" cx="22%" cy="30%" r="45%">
       <stop offset="0%" stop-color="#6a2020" stop-opacity="0.55"/>
-      <stop offset="100%" stop-color="#fffbfb" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
       <animate attributeName="cx" values="22%;28%;18%;22%" dur="22s" repeatCount="indefinite"/>
       <animate attributeName="cy" values="30%;24%;36%;30%" dur="22s" repeatCount="indefinite"/>
     </radialGradient>
     <radialGradient id="mesh2" cx="78%" cy="60%" r="40%">
       <stop offset="0%" stop-color="#f6ecee" stop-opacity="0.7"/>
-      <stop offset="100%" stop-color="#fffbfb" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
       <animate attributeName="cx" values="78%;72%;82%;78%" dur="26s" repeatCount="indefinite"/>
       <animate attributeName="cy" values="60%;68%;54%;60%" dur="26s" repeatCount="indefinite"/>
     </radialGradient>
     <radialGradient id="mesh3" cx="55%" cy="15%" r="35%">
       <stop offset="0%" stop-color="#f2e4e6" stop-opacity="0.55"/>
-      <stop offset="100%" stop-color="#fffbfb" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
       <animate attributeName="cx" values="55%;60%;50%;55%" dur="20s" repeatCount="indefinite"/>
     </radialGradient>
-    <clipPath id="frame">
-      <rect width="1280" height="360" rx="0"/>
-    </clipPath>
+    <!-- Soft blend into GitHub page background -->
+    <linearGradient id="edgeFadeY" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="white" stop-opacity="0"/>
+      <stop offset="8%" stop-color="white" stop-opacity="1"/>
+      <stop offset="72%" stop-color="white" stop-opacity="1"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="edgeFadeX" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="white" stop-opacity="0.15"/>
+      <stop offset="4%" stop-color="white" stop-opacity="1"/>
+      <stop offset="96%" stop-color="white" stop-opacity="1"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0.15"/>
+    </linearGradient>
+    <mask id="pageBlend" maskUnits="userSpaceOnUse" x="0" y="0" width="1280" height="360">
+      <rect width="1280" height="360" fill="url(#edgeFadeY)"/>
+    </mask>
   </defs>
+  <g mask="url(#pageBlend)">
   <rect width="1280" height="360" fill="url(#bgGrad)"/>
   <rect width="1280" height="360" fill="url(#mesh1)">
     <animate attributeName="opacity" values="0.7;1;0.7" dur="14s" repeatCount="indefinite"/>
@@ -1142,8 +1156,8 @@
   <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="9" fill="#500000" opacity="0.55">
     <text x="64" y="28">AGGIE</text>
     <text x="1220" y="28" text-anchor="end">MAROON #500000</text>
-    <text x="64" y="348">CS · TEXAS A&amp;M</text>
-    <text x="1220" y="348" text-anchor="end">COLLEGE STATION</text>
+    <text x="64" y="318">CS · TEXAS A&amp;M</text>
+    <text x="1220" y="318" text-anchor="end">COLLEGE STATION</text>
   </g>
-  <rect width="1280" height="360" fill="none" stroke="#fffbfb" stroke-width="48" opacity="0.45"/>
+  </g>
 </svg>
