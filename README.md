@@ -14,11 +14,15 @@
 </p>
 
 <p align="center">
-  <a href="https://findley.netlify.app/">Portfolio</a>
-  ·
-  <a href="https://github.com/cael1127">Main GitHub</a>
-  ·
-  <a href="https://github.com/caelf-hub">School GitHub</a>
+  <a href="https://findley.netlify.app/">
+    <img src="https://img.shields.io/badge/Portfolio-500000?style=for-the-badge&logo=netlify&logoColor=white" alt="Portfolio"/>
+  </a>
+  <a href="https://github.com/cael1127">
+    <img src="https://img.shields.io/badge/Main_GitHub-24292F?style=for-the-badge&logo=github&logoColor=white" alt="Main GitHub"/>
+  </a>
+  <a href="https://github.com/caelf-hub">
+    <img src="https://img.shields.io/badge/School_GitHub-500000?style=for-the-badge&logo=github&logoColor=white" alt="School GitHub"/>
+  </a>
 </p>
 
 <p align="center">
@@ -47,28 +51,30 @@ I care about clear systems, careful interfaces, and work that holds up under rea
 
 <h2 align="center">Current Focus</h2>
 
-<table align="center" width="100%">
-  <tr>
-    <td align="center" width="50%">
-      <strong>AI Systems</strong><br/>
-      <sub>Planning · scheduling · LLM workflows</sub>
-    </td>
-    <td align="center" width="50%">
-      <strong>Full Stack</strong><br/>
-      <sub>Web · mobile · production product work</sub>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="50%">
-      <strong>Systems</strong><br/>
-      <sub>Low-level experiments · tooling</sub>
-    </td>
-    <td align="center" width="50%">
-      <strong>Applied ML</strong><br/>
-      <sub>RAG · transformers · vector search</sub>
-    </td>
-  </tr>
-</table>
+<div align="center">
+  <table>
+    <tr>
+      <td align="center" width="280">
+        <strong>AI Systems</strong><br/>
+        <sub>Planning · scheduling · LLM workflows</sub>
+      </td>
+      <td align="center" width="280">
+        <strong>Full Stack</strong><br/>
+        <sub>Web · mobile · production product work</sub>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" width="280">
+        <strong>Systems</strong><br/>
+        <sub>Low-level experiments · tooling</sub>
+      </td>
+      <td align="center" width="280">
+        <strong>Applied ML</strong><br/>
+        <sub>RAG · transformers · vector search</sub>
+      </td>
+    </tr>
+  </table>
+</div>
 
 <p align="center">
   <picture>
@@ -80,47 +86,80 @@ I care about clear systems, careful interfaces, and work that holds up under rea
 
 <h2 align="center">Featured Projects</h2>
 
-<table>
-  <tr>
-    <td valign="top" width="50%">
-      <h3><a href="https://github.com/cael1127/boltPlanner">AI College Planner</a></h3>
-      <p>LLM-powered scheduling engine for academic planning.</p>
-      <p><code>TypeScript</code> <code>Full Stack</code> <code>LLMs</code></p>
-    </td>
-    <td valign="top" width="50%">
-      <h3><a href="https://github.com/cael1127/aquaFarm">Oyster Management Platform</a></h3>
-      <p>Production ops for aquaculture workflows.</p>
-      <p><code>React</code> <code>Expo</code> <code>Stripe</code> <code>Supabase</code></p>
-    </td>
-  </tr>
-  <tr>
-    <td valign="top" width="50%">
-      <h3><a href="https://findley.netlify.app/">Portfolio Website</a></h3>
-      <p>Personal site and project showcase.</p>
-      <p><code>TypeScript</code> <code>Web</code></p>
-    </td>
-    <td valign="top" width="50%">
-      <h3>
-        <a href="https://github.com/cael1127/EmulatorRS">OS Experiments</a>
-        ·
-        <a href="https://github.com/cael1127/ACF">ACF</a>
-      </h3>
-      <p>Emulators and systems tooling.</p>
-      <p><code>Python</code> <code>C</code></p>
-    </td>
-  </tr>
-  <tr>
-    <td valign="top" colspan="2">
-      <h3>
-        <a href="https://github.com/cael1127/AI_ACF">AI Research</a>
-        ·
-        <a href="https://github.com/cael1127/Ai_Projects">Experiments</a>
-      </h3>
-      <p>Applied ML and AI prototypes.</p>
-      <p><code>Python</code> <code>ML</code> <code>LLMs</code></p>
-    </td>
-  </tr>
-</table>
+<div align="center">
+  <table>
+    <tr>
+      <td align="center" valign="top" width="420">
+        <h3>AI College Planner</h3>
+        <p>LLM-powered scheduling engine for academic planning.</p>
+        <p>
+          <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript"/>
+          <img src="https://img.shields.io/badge/Full_Stack-500000?style=flat-square" alt="Full Stack"/>
+          <img src="https://img.shields.io/badge/LLMs-111111?style=flat-square" alt="LLMs"/>
+        </p>
+        <a href="https://github.com/cael1127/boltPlanner">
+          <img src="https://img.shields.io/badge/View_Repo-500000?style=for-the-badge&logo=github&logoColor=white" alt="View Repo"/>
+        </a>
+      </td>
+      <td align="center" valign="top" width="420">
+        <h3>Oyster Management Platform</h3>
+        <p>Production ops for aquaculture workflows.</p>
+        <p>
+          <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React"/>
+          <img src="https://img.shields.io/badge/Expo-000020?style=flat-square&logo=expo&logoColor=white" alt="Expo"/>
+          <img src="https://img.shields.io/badge/Supabase-3FCF8E?style=flat-square&logo=supabase&logoColor=black" alt="Supabase"/>
+        </p>
+        <a href="https://github.com/cael1127/aquaFarm">
+          <img src="https://img.shields.io/badge/View_Repo-500000?style=for-the-badge&logo=github&logoColor=white" alt="View Repo"/>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="420">
+        <h3>Portfolio Website</h3>
+        <p>Personal site and project showcase.</p>
+        <p>
+          <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript"/>
+          <img src="https://img.shields.io/badge/Web-500000?style=flat-square" alt="Web"/>
+        </p>
+        <a href="https://findley.netlify.app/">
+          <img src="https://img.shields.io/badge/Open_Site-500000?style=for-the-badge&logo=netlify&logoColor=white" alt="Open Site"/>
+        </a>
+      </td>
+      <td align="center" valign="top" width="420">
+        <h3>OS Experiments</h3>
+        <p>Emulators and systems tooling.</p>
+        <p>
+          <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"/>
+          <img src="https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black" alt="C"/>
+        </p>
+        <a href="https://github.com/cael1127/EmulatorRS">
+          <img src="https://img.shields.io/badge/EmulatorRS-24292F?style=for-the-badge&logo=github&logoColor=white" alt="EmulatorRS"/>
+        </a>
+        <a href="https://github.com/cael1127/ACF">
+          <img src="https://img.shields.io/badge/ACF-500000?style=for-the-badge&logo=github&logoColor=white" alt="ACF"/>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" colspan="2">
+        <h3>AI Research &amp; Experiments</h3>
+        <p>Applied ML and AI prototypes.</p>
+        <p>
+          <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"/>
+          <img src="https://img.shields.io/badge/ML-500000?style=flat-square" alt="ML"/>
+          <img src="https://img.shields.io/badge/LLMs-111111?style=flat-square" alt="LLMs"/>
+        </p>
+        <a href="https://github.com/cael1127/AI_ACF">
+          <img src="https://img.shields.io/badge/AI_ACF-500000?style=for-the-badge&logo=github&logoColor=white" alt="AI_ACF"/>
+        </a>
+        <a href="https://github.com/cael1127/Ai_Projects">
+          <img src="https://img.shields.io/badge/Ai_Projects-24292F?style=for-the-badge&logo=github&logoColor=white" alt="Ai_Projects"/>
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>
 
 <p align="center">
   <picture>
@@ -152,48 +191,41 @@ I care about clear systems, careful interfaces, and work that holds up under rea
 
 <h2 align="center">Tech Stack</h2>
 
-<table align="center">
-  <tr>
-    <td align="right"><strong>Languages</strong></td>
-    <td>
-      <code>Java</code>
-      <code>Python</code>
-      <code>TypeScript</code>
-      <code>Rust</code>
-      <code>C</code>
-      <code>C++</code>
-      <code>SQL</code>
-    </td>
-  </tr>
-  <tr>
-    <td align="right"><strong>Frameworks</strong></td>
-    <td>
-      <code>React</code>
-      <code>Next.js</code>
-      <code>Node</code>
-      <code>Expo</code>
-      <code>Supabase</code>
-    </td>
-  </tr>
-  <tr>
-    <td align="right"><strong>Cloud</strong></td>
-    <td>
-      <code>Docker</code>
-      <code>AWS</code>
-      <code>GitHub Actions</code>
-    </td>
-  </tr>
-  <tr>
-    <td align="right"><strong>AI</strong></td>
-    <td>
-      <code>Transformers</code>
-      <code>PyTorch</code>
-      <code>LLMs</code>
-      <code>RAG</code>
-      <code>Vector DBs</code>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <strong>Languages</strong><br/>
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java"/>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
+  <img src="https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white" alt="Rust"/>
+  <img src="https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=black" alt="C"/>
+  <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++"/>
+  <img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white" alt="SQL"/>
+</p>
+
+<p align="center">
+  <strong>Frameworks</strong><br/>
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React"/>
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js"/>
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js"/>
+  <img src="https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=white" alt="Expo"/>
+  <img src="https://img.shields.io/badge/Supabase-3FCF8E?style=for-the-badge&logo=supabase&logoColor=black" alt="Supabase"/>
+</p>
+
+<p align="center">
+  <strong>Cloud</strong><br/>
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/>
+  <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white" alt="AWS"/>
+  <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions"/>
+</p>
+
+<p align="center">
+  <strong>AI</strong><br/>
+  <img src="https://img.shields.io/badge/Transformers-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" alt="Transformers"/>
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch"/>
+  <img src="https://img.shields.io/badge/LLMs-500000?style=for-the-badge" alt="LLMs"/>
+  <img src="https://img.shields.io/badge/RAG-111111?style=for-the-badge" alt="RAG"/>
+  <img src="https://img.shields.io/badge/Vector_DBs-500000?style=for-the-badge" alt="Vector DBs"/>
+</p>
 
 <p align="center">
   <picture>
@@ -221,8 +253,14 @@ I care about clear systems, careful interfaces, and work that holds up under rea
 <h2 align="center">Open Source</h2>
 
 <p align="center">
-  Public work on <a href="https://github.com/cael1127"><strong>@cael1127</strong></a><br/>
+  Public work on <strong>@cael1127</strong><br/>
   <sub>This school profile highlights direction, research interests, and selected projects.</sub>
+</p>
+
+<p align="center">
+  <a href="https://github.com/cael1127">
+    <img src="https://img.shields.io/badge/Visit_@cael1127-24292F?style=for-the-badge&logo=github&logoColor=white" alt="Visit @cael1127"/>
+  </a>
 </p>
 
 <p align="center">
@@ -271,11 +309,15 @@ I care about clear systems, careful interfaces, and work that holds up under rea
 <h2 align="center">Connect</h2>
 
 <p align="center">
-  <a href="https://findley.netlify.app/"><strong>Portfolio</strong></a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="https://github.com/cael1127"><strong>@cael1127</strong></a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="https://github.com/caelf-hub"><strong>@caelf-hub</strong></a>
+  <a href="https://findley.netlify.app/">
+    <img src="https://img.shields.io/badge/Portfolio-500000?style=for-the-badge&logo=netlify&logoColor=white" alt="Portfolio"/>
+  </a>
+  <a href="https://github.com/cael1127">
+    <img src="https://img.shields.io/badge/@cael1127-24292F?style=for-the-badge&logo=github&logoColor=white" alt="@cael1127"/>
+  </a>
+  <a href="https://github.com/caelf-hub">
+    <img src="https://img.shields.io/badge/@caelf--hub-500000?style=for-the-badge&logo=github&logoColor=white" alt="@caelf-hub"/>
+  </a>
 </p>
 
 <br/>
