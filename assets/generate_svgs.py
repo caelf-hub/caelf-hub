@@ -7,46 +7,51 @@ OUT = Path(__file__).resolve().parent
 FONT_UI = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
 FONT_MONO = "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
 
+# Texas A&M Aggie Maroon (#500000) as primary brand signal
 THEMES = {
     "dark": {
-        "bg0": "#0a0b0d",
-        "bg1": "#12141a",
-        "grid": "#2a2e38",
-        "grid_faint": "#1e222b",
-        "ink": "#f5f5f7",
-        "muted": "#8e8e93",
-        "faint": "#636366",
-        "accent": "#8b3a45",
-        "accent_soft": "#5c2a32",
-        "circuit": "#3d4452",
-        "node": "#c9a0a6",
-        "stream": "#6b7385",
-        "mesh_a": "#1a1520",
-        "mesh_b": "#0f1a22",
-        "mesh_c": "#1a1214",
-        "particle": "#d1d1d6",
-        "cursor": "#c9a0a6",
-        "vignette": "#0a0b0d",
+        "bg0": "#100808",
+        "bg1": "#1a0e10",
+        "grid": "#4a2428",
+        "grid_faint": "#2a1618",
+        "ink": "#faf7f7",
+        "muted": "#c9b0b3",
+        "faint": "#8f6e72",
+        "accent": "#c45c6a",
+        "accent_soft": "#500000",
+        "circuit": "#6b3038",
+        "node": "#e8b4ba",
+        "stream": "#8b4a52",
+        "mesh_a": "#2a1014",
+        "mesh_b": "#1a0c10",
+        "mesh_c": "#301018",
+        "particle": "#e8c8cc",
+        "cursor": "#e8b4ba",
+        "vignette": "#100808",
+        "rail": "#500000",
+        "white": "#ffffff",
     },
     "light": {
-        "bg0": "#fbfbfd",
-        "bg1": "#f5f5f7",
-        "grid": "#d2d2d7",
-        "grid_faint": "#e5e5ea",
-        "ink": "#1d1d1f",
-        "muted": "#6e6e73",
-        "faint": "#8e8e93",
+        "bg0": "#fffbfb",
+        "bg1": "#f7f0f0",
+        "grid": "#d4b8bc",
+        "grid_faint": "#eadfe1",
+        "ink": "#1a0808",
+        "muted": "#5c3034",
+        "faint": "#8a5a5e",
         "accent": "#500000",
-        "accent_soft": "#7a3a3a",
-        "circuit": "#c7c7cc",
+        "accent_soft": "#6a2020",
+        "circuit": "#b89094",
         "node": "#500000",
-        "stream": "#aeaeb2",
-        "mesh_a": "#f0eef2",
-        "mesh_b": "#e8eef4",
-        "mesh_c": "#f2ecec",
-        "particle": "#1d1d1f",
+        "stream": "#8b5054",
+        "mesh_a": "#f2e4e6",
+        "mesh_b": "#f6ecee",
+        "mesh_c": "#efe0e2",
+        "particle": "#500000",
         "cursor": "#500000",
-        "vignette": "#fbfbfd",
+        "vignette": "#fffbfb",
+        "rail": "#500000",
+        "white": "#ffffff",
     },
 }
 
@@ -161,7 +166,7 @@ def mesh_layer(t: dict) -> str:
       </stop>
     </linearGradient>
     <radialGradient id="mesh1" cx="22%" cy="30%" r="45%">
-      <stop offset="0%" stop-color="{t['accent_soft']}" stop-opacity="0.35"/>
+      <stop offset="0%" stop-color="{t['accent_soft']}" stop-opacity="0.55"/>
       <stop offset="100%" stop-color="{t['bg0']}" stop-opacity="0"/>
       <animate attributeName="cx" values="22%;28%;18%;22%" dur="22s" repeatCount="indefinite"/>
       <animate attributeName="cy" values="30%;24%;36%;30%" dur="22s" repeatCount="indefinite"/>
@@ -277,61 +282,72 @@ def circuit_layer(t: dict) -> str:
     return '\n'.join(lines) + '\n'
 
 
+def brand_rail(t: dict, height: int = 360) -> str:
+    return f'''  <!-- Aggie maroon brand rail -->
+  <rect x="0" y="0" width="8" height="{height}" fill="{t['rail']}">
+    <animate attributeName="opacity" values="0.85;1;0.85" dur="6s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="8" y="0" width="2" height="{height}" fill="{t['white']}" opacity="0.55"/>
+'''
+
+
 def hero_text(t: dict) -> str:
-    # Typewriter via clip reveal + cursor
     return f'''  <!-- Hero typography -->
   <g font-family="{FONT_UI}">
+    <text x="64" y="56" fill="{t['accent']}" font-family="{FONT_MONO}" font-size="11" font-weight="600" letter-spacing="2.5" opacity="0">
+      TEXAS A&amp;M UNIVERSITY
+      <animate attributeName="opacity" from="0" to="1" begin="0.1s" dur="0.5s" fill="freeze"/>
+    </text>
     <text x="64" y="148" fill="{t['ink']}" font-size="52" font-weight="600" letter-spacing="-0.8" opacity="0">
       Cael Findley
       <animate attributeName="opacity" from="0" to="1" begin="0.3s" dur="0.8s" fill="freeze"/>
       <animateTransform attributeName="transform" type="translate" values="0,10; 0,0" begin="0.3s" dur="0.8s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.2 0.8 0.2 1"/>
     </text>
-    <!-- Cursor after name -->
     <rect x="400" y="112" width="2.5" height="42" fill="{t['cursor']}" opacity="0" rx="0.5">
       <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.18;0.19;0.48;0.49;1" dur="1.1s" begin="1.0s" repeatCount="indefinite"/>
       <animate attributeName="x" values="64;400" dur="1.4s" begin="0.3s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.4 0 0.2 1"/>
     </rect>
-    <text x="64" y="188" fill="{t['muted']}" font-size="18" font-weight="400" letter-spacing="0.2" opacity="0">
-      Computer Science · Texas A&amp;M University
+    <text x="64" y="188" fill="{t['muted']}" font-size="18" font-weight="500" letter-spacing="0.2" opacity="0">
+      Computer Science  ·  College Station, TX
       <animate attributeName="opacity" from="0" to="1" begin="1.2s" dur="0.7s" fill="freeze"/>
       <animateTransform attributeName="transform" type="translate" values="0,8; 0,0" begin="1.2s" dur="0.7s" fill="freeze"/>
     </text>
   </g>
-  <!-- Focus chips -->
+  <!-- Focus chips — maroon framed -->
   <g font-family="{FONT_UI}" font-size="13" font-weight="500" opacity="0">
     <g>
-      <rect x="64" y="220" width="158" height="28" rx="6" fill="{t['accent']}" fill-opacity="0.12" stroke="{t['accent']}" stroke-opacity="0.35" stroke-width="1"/>
+      <rect x="64" y="220" width="158" height="28" rx="6" fill="{t['accent']}" fill-opacity="0.18" stroke="{t['accent']}" stroke-opacity="0.75" stroke-width="1.25"/>
       <text x="143" y="238" text-anchor="middle" fill="{t['ink']}">Artificial Intelligence</text>
     </g>
     <g>
-      <rect x="234" y="220" width="152" height="28" rx="6" fill="{t['accent']}" fill-opacity="0.08" stroke="{t['circuit']}" stroke-width="1"/>
-      <text x="310" y="238" text-anchor="middle" fill="{t['muted']}">Software Engineering</text>
+      <rect x="234" y="220" width="152" height="28" rx="6" fill="{t['accent']}" fill-opacity="0.12" stroke="{t['accent']}" stroke-opacity="0.55" stroke-width="1.25"/>
+      <text x="310" y="238" text-anchor="middle" fill="{t['ink']}">Software Engineering</text>
     </g>
     <g>
-      <rect x="398" y="220" width="78" height="28" rx="6" fill="{t['accent']}" fill-opacity="0.08" stroke="{t['circuit']}" stroke-width="1"/>
-      <text x="437" y="238" text-anchor="middle" fill="{t['muted']}">Systems</text>
+      <rect x="398" y="220" width="78" height="28" rx="6" fill="{t['accent']}" fill-opacity="0.12" stroke="{t['accent']}" stroke-opacity="0.55" stroke-width="1.25"/>
+      <text x="437" y="238" text-anchor="middle" fill="{t['ink']}">Systems</text>
     </g>
     <g>
-      <rect x="488" y="220" width="138" height="28" rx="6" fill="{t['accent']}" fill-opacity="0.08" stroke="{t['circuit']}" stroke-width="1"/>
-      <text x="557" y="238" text-anchor="middle" fill="{t['muted']}">Machine Learning</text>
+      <rect x="488" y="220" width="138" height="28" rx="6" fill="{t['accent']}" fill-opacity="0.12" stroke="{t['accent']}" stroke-opacity="0.55" stroke-width="1.25"/>
+      <text x="557" y="238" text-anchor="middle" fill="{t['ink']}">Machine Learning</text>
     </g>
     <animate attributeName="opacity" from="0" to="1" begin="1.9s" dur="0.8s" fill="freeze"/>
   </g>
   <!-- Accent measure -->
   <g opacity="0">
-    <rect x="64" y="272" width="200" height="1.5" fill="{t['circuit']}" rx="1"/>
-    <rect x="64" y="272" width="0" height="1.5" fill="{t['accent']}" rx="1">
-      <animate attributeName="width" from="0" to="200" begin="2.5s" dur="1.2s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.4 0 0.2 1"/>
+    <rect x="64" y="272" width="240" height="2" fill="{t['circuit']}" rx="1"/>
+    <rect x="64" y="272" width="0" height="2" fill="{t['rail']}" rx="1">
+      <animate attributeName="width" from="0" to="240" begin="2.5s" dur="1.2s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.4 0 0.2 1"/>
     </rect>
-    <text x="64" y="296" fill="{t['faint']}" font-family="{FONT_MONO}" font-size="11" letter-spacing="1.5">ENGINEERING · RESEARCH · BUILD</text>
+    <text x="64" y="296" fill="{t['accent']}" font-family="{FONT_MONO}" font-size="11" font-weight="600" letter-spacing="2">GIG &apos;EM  ·  ENGINEERING  ·  RESEARCH</text>
     <animate attributeName="opacity" from="0" to="1" begin="2.5s" dur="0.4s" fill="freeze"/>
   </g>
-  <!-- Coordinate ticks -->
-  <g font-family="{FONT_MONO}" font-size="9" fill="{t['faint']}" opacity="0.45">
-    <text x="64" y="28">0,0</text>
-    <text x="1220" y="28" text-anchor="end">1280</text>
-    <text x="64" y="348">CS · TAMU</text>
-    <text x="1220" y="348" text-anchor="end">v1</text>
+  <!-- Brand ticks -->
+  <g font-family="{FONT_MONO}" font-size="9" fill="{t['accent']}" opacity="0.55">
+    <text x="64" y="28">AGGIE</text>
+    <text x="1220" y="28" text-anchor="end">MAROON #500000</text>
+    <text x="64" y="348">CS · TEXAS A&amp;M</text>
+    <text x="1220" y="348" text-anchor="end">COLLEGE STATION</text>
   </g>
 '''
 
@@ -347,7 +363,7 @@ def header_svg(theme: str) -> str:
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 360" width="1280" height="360" role="img" aria-labelledby="title desc">
   <title id="title">Cael Findley — Computer Science, Texas A&amp;M</title>
   <desc id="desc">Animated profile banner ({theme} mode): engineering grid, circuit traces, and typewriter introduction</desc>
-{mesh_layer(t)}{grid_layer(t)}{particles_layer(t)}{streams_layer(t)}{neural_layer(t)}{circuit_layer(t)}{hero_text(t)}{vignette(t)}</svg>
+{mesh_layer(t)}{grid_layer(t)}{particles_layer(t)}{streams_layer(t)}{neural_layer(t)}{circuit_layer(t)}{brand_rail(t)}{hero_text(t)}{vignette(t)}</svg>
 '''
 
 
@@ -364,7 +380,7 @@ def footer_svg(theme: str) -> str:
       <stop offset="100%" stop-color="{t['bg1']}"/>
     </linearGradient>
     <radialGradient id="fmesh" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="{t['accent_soft']}" stop-opacity="0.2"/>
+      <stop offset="0%" stop-color="{t['accent_soft']}" stop-opacity="0.35"/>
       <stop offset="100%" stop-color="{t['bg0']}" stop-opacity="0"/>
     </radialGradient>
   </defs>
@@ -372,6 +388,8 @@ def footer_svg(theme: str) -> str:
   <rect width="1280" height="120" fill="url(#fmesh)">
     <animate attributeName="opacity" values="0.5;1;0.5" dur="12s" repeatCount="indefinite"/>
   </rect>
+  <rect x="0" y="0" width="8" height="120" fill="{t['rail']}"/>
+  <rect x="8" y="0" width="2" height="120" fill="{t['white']}" opacity="0.55"/>
 ''']
     # Mini grid
     lines.append(f'  <g stroke="{t["grid_faint"]}" stroke-width="1" fill="none" opacity="0.5">')
@@ -381,8 +399,8 @@ def footer_svg(theme: str) -> str:
         lines.append(f'    <line x1="0" y1="{y}" x2="1280" y2="{y}"/>')
     lines.append('  </g>')
     # Rule
-    lines.append(f'''  <line x1="64" y1="28" x2="1216" y2="28" stroke="{t['circuit']}" stroke-width="1" opacity="0.6">
-    <animate attributeName="opacity" values="0.35;0.7;0.35" dur="8s" repeatCount="indefinite"/>
+    lines.append(f'''  <line x1="64" y1="28" x2="1216" y2="28" stroke="{t['accent']}" stroke-width="1.25" opacity="0.55">
+    <animate attributeName="opacity" values="0.35;0.8;0.35" dur="8s" repeatCount="indefinite"/>
   </line>
 ''')
     # Particles
@@ -397,8 +415,10 @@ def footer_svg(theme: str) -> str:
     lines.append(f'''  <circle cx="76" cy="68" r="4" fill="{t['accent']}">
     <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
   </circle>
-  <text x="92" y="73" fill="{t['ink']}" font-family="{FONT_UI}" font-size="15" font-weight="500">Cael Findley</text>
-  <text x="1216" y="73" text-anchor="end" fill="{t['faint']}" font-family="{FONT_MONO}" font-size="11" letter-spacing="1">TEXAS A&amp;M · CS</text>
+  <text x="92" y="68" fill="{t['ink']}" font-family="{FONT_UI}" font-size="15" font-weight="600">Cael Findley</text>
+  <text x="92" y="86" fill="{t['accent']}" font-family="{FONT_MONO}" font-size="10" letter-spacing="1.5">GIG &apos;EM</text>
+  <text x="1216" y="68" text-anchor="end" fill="{t['accent']}" font-family="{FONT_MONO}" font-size="11" font-weight="600" letter-spacing="1.5">TEXAS A&amp;M UNIVERSITY</text>
+  <text x="1216" y="86" text-anchor="end" fill="{t['faint']}" font-family="{FONT_MONO}" font-size="10" letter-spacing="1">COMPUTER SCIENCE</text>
   <rect width="1280" height="120" fill="none" stroke="{t['vignette']}" stroke-width="32" opacity="0.35"/>
 </svg>
 ''')
