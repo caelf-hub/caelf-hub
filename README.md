@@ -2,9 +2,9 @@
 
 <p align="center">
 <picture>
-<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/caelf-hub/font/main/dark.svg">
-<source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/caelf-hub/font/main/light.svg">
-<img src="https://raw.githubusercontent.com/caelf-hub/font/main/light.svg" alt="Banner">
+<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/dark.svg">
+<source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/light.svg">
+<img src="https://raw.githubusercontent.com/caelf-hub/caelf-hub/main/light.svg" alt="Banner">
 </picture>
 </p>
 
