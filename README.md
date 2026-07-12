@@ -17,8 +17,8 @@
 </p>
 
 <p align="center">
-  <em>Computer Science Â· Texas A&amp;M University Â· College Station</em><br/>
-  <strong>Gig 'em</strong> Â· building as an Aggie engineer.
+  <em>Computer Science · Texas A&amp;M University · College Station</em><br/>
+  <strong>Gig 'em</strong> · building as an Aggie engineer.
 </p>
 
 <p align="center">
@@ -64,21 +64,21 @@ I care about clear systems, careful interfaces, and work that holds up under rea
     <tr>
       <td align="center" width="280">
         <strong>AI Systems</strong><br/>
-        <sub>Planning Â· scheduling Â· LLM workflows</sub>
+        <sub>Planning · scheduling · LLM workflows</sub>
       </td>
       <td align="center" width="280">
         <strong>Full Stack</strong><br/>
-        <sub>Web Â· mobile Â· production product work</sub>
+        <sub>Web · mobile · production product work</sub>
       </td>
     </tr>
     <tr>
       <td align="center" width="280">
         <strong>Systems</strong><br/>
-        <sub>Low-level experiments Â· tooling</sub>
+        <sub>Low-level experiments · tooling</sub>
       </td>
       <td align="center" width="280">
         <strong>Applied ML</strong><br/>
-        <sub>RAG Â· transformers Â· vector search</sub>
+        <sub>RAG · transformers · vector search</sub>
       </td>
     </tr>
   </table>
@@ -181,11 +181,11 @@ I care about clear systems, careful interfaces, and work that holds up under rea
 
 <p align="center">
   Large language models &amp; RAG
-  Â·
+  ·
   Scheduling &amp; planning systems
-  Â·
+  ·
   Model-to-product full stack
-  Â·
+  ·
   Embedded &amp; low-level software
 </p>
 
@@ -247,7 +247,7 @@ I care about clear systems, careful interfaces, and work that holds up under rea
 
 <p align="center">
   <strong>Software Developer</strong><br/>
-  <sub>Full-stack products Â· reliable interfaces Â· shipping features that matter</sub>
+  <sub>Full-stack products · reliable interfaces · shipping features that matter</sub>
 </p>
 
 <p align="center">
@@ -283,7 +283,7 @@ I care about clear systems, careful interfaces, and work that holds up under rea
 
 <p align="center">
   <strong>Texas A&amp;M University</strong><br/>
-  Computer Science Â· College Station, Texas<br/>
+  Computer Science · College Station, Texas<br/>
   <em>Gig 'em</em>
 </p>
 
@@ -298,12 +298,24 @@ I care about clear systems, careful interfaces, and work that holds up under rea
 <h2 align="center">GitHub Statistics</h2>
 
 <p align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=cael1127&show_icons=true&include_all_commits=true&count_private=true&theme=transparent&hide_border=true&title_color=500000&icon_color=500000&text_color=5c3034&ring_color=500000" alt="GitHub stats" />
-  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=cael1127&layout=compact&theme=transparent&hide_border=true&title_color=500000&text_color=5c3034" alt="Top languages" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-sigma-five.vercel.app/api?username=cael1127&show_icons=true&include_all_commits=true&hide_border=true&bg_color=00000000&title_color=c45c6a&icon_color=c45c6a&text_color=c9b0b3&ring_color=c45c6a">
+    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats-sigma-five.vercel.app/api?username=cael1127&show_icons=true&include_all_commits=true&hide_border=true&bg_color=00000000&title_color=500000&icon_color=500000&text_color=5c3034&ring_color=500000">
+    <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=cael1127&show_icons=true&include_all_commits=true&hide_border=true&bg_color=00000000&title_color=500000&icon_color=500000&text_color=5c3034&ring_color=500000" alt="GitHub stats" height="170" />
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=cael1127&layout=compact&langs_count=6&hide_border=true&bg_color=00000000&title_color=c45c6a&text_color=c9b0b3">
+    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=cael1127&layout=compact&langs_count=6&hide_border=true&bg_color=00000000&title_color=500000&text_color=5c3034">
+    <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=cael1127&layout=compact&langs_count=6&hide_border=true&bg_color=00000000&title_color=500000&text_color=5c3034" alt="Top languages" height="170" />
+  </picture>
 </p>
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=cael1127&theme=transparent&hide_border=true&ring=500000&fire=500000&currStreakLabel=500000" alt="GitHub streak" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=cael1127&theme=dark&hide_border=true&ring=c45c6a&fire=c45c6a&currStreakLabel=c45c6a&background=00000000">
+    <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com?user=cael1127&theme=default&hide_border=true&ring=500000&fire=500000&currStreakLabel=500000&background=00000000">
+    <img src="https://streak-stats.demolab.com?user=cael1127&theme=default&hide_border=true&ring=500000&fire=500000&currStreakLabel=500000&background=00000000" alt="GitHub streak" />
+  </picture>
 </p>
 
 <p align="center">
